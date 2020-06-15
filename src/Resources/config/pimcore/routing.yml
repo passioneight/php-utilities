@@ -1,0 +1,3 @@
+#server_sent_events:
+#    resource: "@BundleTemplateBundle/Controller/"
+#    type:     annotation
