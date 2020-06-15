@@ -2,7 +2,7 @@
 
 namespace Passioneight\Bundle\PhpUtilitiesBundle\Utility;
 
-use Passioneight\Bundle\PhpUtilitiesBundle\Constant\Php;
+use Passioneight\Bundle\PhpUtilitiesBundle\Constant\MethodType;
 
 class MethodUtility
 {
@@ -12,7 +12,7 @@ class MethodUtility
      */
     public static function createGetter(string $name)
     {
-        return self::create($name, Php::METHOD_TYPE_GETTER);
+        return self::create($name, MethodType::GET);
     }
 
     /**
@@ -21,9 +21,8 @@ class MethodUtility
      */
     public static function createSetter(string $name)
     {
-        return self::create($name, Php::METHOD_TYPE_SETTER);
+        return self::create($name, MethodType::SET);
     }
-
 
     /**
      * @param string $name
@@ -31,7 +30,16 @@ class MethodUtility
      */
     public static function createIsser(string $name)
     {
-        return self::create($name, Php::METHOD_TYPE_ISSER);
+        return self::create($name, MethodType::IS);
+    }
+
+    /**
+     * @param string $name
+     * @return string
+     */
+    public static function createHasser(string $name)
+    {
+        return self::create($name, MethodType::HAS);
     }
 
     /**
