@@ -1,11 +1,5 @@
 # Php Utilities
-This repository provides various utility methods for PHP, such as:
-
-- a generic `Constant` class,
-- `Php`, `MethodType` constants,
-- `NamespaceUtility` class,
-- `StringUtility` class,
-- `MethodUtility` class.
+This repository provides various utility methods for PHP.
 
 > The bundle will be extended where applicable (when needed).
 
@@ -16,12 +10,16 @@ composer require passioneight/php-utilities
 ```
 
 # Usage
-Most of the provided utilities are pretty straight forward and should become clear once the code you had a look
+Most of the provided utilities are pretty straight forward and should become clear once you had a look
 at the code directly. However, for the sake of a proper documentation, the various components are briefly explained.
 
 #### Constants
-A generic `Constant` class is available to extend from, thus, providing your constants-classes with convenient methods,
-such as `getAll`.
+When using constants it is often necessary to loop over all available constants of a class. To provide
+a standardized way of doing this, the `Constant` class is available.
+
+> You can simply extend the `Constant` class.
+
+This class provides a `getAll` method (amongst others), which will return an array of all available constants in your class.
 
 Additionally, [various constants](https://github.com/passioneight/php-utilities/tree/master/src/Constant) are available for your convenience.
 
