@@ -36,8 +36,8 @@ if(!in_array($tenant->getType(), TenantType::getAll())) {
 }
 ```
 
-> Note that it is considered best practice to **avoid plural** in constat class names, for the mere reason of increased
-> readability. That is, `TenanType::B2C` makes more sense than `TenanTypes::B2C`.
+> Note that it is considered best practice to **avoid plural** in constant class names, for the mere reason of increased
+> readability. That is, `TenantType::B2C` makes more sense than `TenantTypes::B2C`.
 
 #### Utility Classes
 In addition to the provided `Constant` class, the bundle also provides utility classes.
