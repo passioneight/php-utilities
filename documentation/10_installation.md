@@ -1,6 +1,6 @@
 # Installation
 
-Execute the following commands and your are ready to go:
+Execute the following commands and you are ready to go:
 
 ```
 COMPOSER_MEMORY_LIMIT=-1 composer require passioneight/php-utilities
