@@ -78,5 +78,11 @@ $value = "myvalue";
 StringUtility::toCamelCase($value); // Returns "myValue"
 ```
 
-> Note that currently only the `toCamelCase` method is available. If you are in need of another method, please,
-> create a PR.
+The `StringUtility` class also provides the following methods:
+- `contains`
+- `startsWith`
+- `endsWith`
+
+> These methods are **case-sensitive**.
+
+### [Back to Overview](/README.md)
