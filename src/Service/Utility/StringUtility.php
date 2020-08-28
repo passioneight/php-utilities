@@ -18,4 +18,40 @@ class StringUtility
         $value = str_replace(" ", "", $value);
         return lcfirst($value);
     }
+
+    /**
+     * @param string $needle
+     * @param string $haystack
+     * @return bool
+     */
+    public static function startsWith(string $needle, string $haystack)
+    {
+        $needleLength = strlen($needle);
+        $haystackLength = strlen($haystack);
+
+        return $needleLength <= $haystackLength && substr($haystack, 0, $needleLength) === $needle;
+    }
+
+    /**
+     * @param string $needle
+     * @param string $haystack
+     * @return bool
+     */
+    public static function endsWith(string $needle, string $haystack)
+    {
+        $needleLength = strlen($needle);
+        $haystackLength = strlen($haystack);
+
+        return $needleLength <= $haystackLength && substr($haystack, $haystackLength - $needleLength, $needleLength) === $needle;
+    }
+
+    /**
+     * @param string $needle
+     * @param string $haystack
+     * @return bool
+     */
+    public static function contains(string $needle, string $haystack)
+    {
+        return strpos($haystack, $needle) !== false;
+    }
 }
