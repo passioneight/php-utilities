@@ -85,4 +85,13 @@ The `StringUtility` class also provides the following methods:
 
 > These methods are **case-sensitive**.
 
+###### PathUtility
+Similar to the `NamespaceUtility`, the `PathUtility` contains a `join` method. The only difference is the _glue_
+that is used to join the passed parameters. When using this method, your code cannot break if you decide to switch to
+a different kind of server.
+
+```php
+$path = PathUtility::join(__DIR__, "Resources", "Importer"); // This is just an example of how a path could be created
+```
+
 ### [Back to Overview](/README.md)
