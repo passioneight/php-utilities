@@ -9,6 +9,7 @@ This repository provides various utility methods for PHP.
         - [MethodUtility](/documentation/20_usage.md#methodutility)
         - [NamespaceUtility](/documentation/20_usage.md#namespaceutility)
         - [StringUtility](/documentation/20_usage.md#stringutility)
+        - [PathUtility](/documentation/20_usage.md#pathutility)
 
 # When should I use this bundle?
 Whenever you create a project using PHP.
