@@ -12,4 +12,22 @@ class PathUtility
     {
         return join(DIRECTORY_SEPARATOR, $parts);
     }
+
+    /**
+     * @param string $path
+     * @return string
+     */
+    public static function addTrailingSlash(string $path)
+    {
+        return $path . DIRECTORY_SEPARATOR;
+    }
+
+    /**
+     * @param string $path
+     * @return string
+     */
+    public static function addLeadingSlash(string $path)
+    {
+        return DIRECTORY_SEPARATOR . $path;
+    }
 }
