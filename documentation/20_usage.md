@@ -94,4 +94,8 @@ a different kind of server.
 $path = PathUtility::join(__DIR__, "Resources", "Importer"); // This is just an example of how a path could be created
 ```
 
+The `PathUtility` class also provides the following methods:
+- `addTrailingSlash`
+- `addLeadingSlash`
+
 ### [Back to Overview](/README.md)
