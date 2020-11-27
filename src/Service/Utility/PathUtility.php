@@ -1,6 +1,6 @@
 <?php
 
-namespace Passioneight\Bundle\PhpUtilitiesBundle\Utility;
+namespace Passioneight\Bundle\PhpUtilitiesBundle\Service\Utility;
 
 class PathUtility
 {
