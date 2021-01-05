@@ -5,8 +5,8 @@ namespace Passioneight\Bundle\PhpUtilitiesBundle\Service\Utility;
 class PathUtility
 {
     /**
-     * @param string ...$parts all parts to join
-     * @return string the joined path.
+     * @param string ...$parts
+     * @return string
      */
     public static function join(...$parts)
     {
