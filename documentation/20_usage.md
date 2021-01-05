@@ -98,4 +98,15 @@ The `PathUtility` class also provides the following methods:
 - `addTrailingSlash`
 - `addLeadingSlash`
 
+###### PathUtility
+Again, the `UrlUtility` contains a `join` method. The only difference is the _glue_ that is used to join the passed parameters.
+Additionally, there are some more methods to help ease building URLs or extracting information (such as the endpoint of the URL).
+
+```php
+$url = UrlUtility::join($apiBaseUrl, "v1", "endpoint"); // This is just an example of how a URL could be created
+$endpoint = UrlUtility::getEndpointFromUrl($url); // Returns "endpoint"
+```
+
+The `Php` constants class was extended to contain any delimiters related to a URL (i.e, `/`, `?`, `&`).
+
 ### [Back to Overview](/README.md)
