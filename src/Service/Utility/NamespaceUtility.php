@@ -47,7 +47,7 @@ class NamespaceUtility
     }
 
     /**
-     * @param string[] ...$parts all parts to join
+     * @param string ...$parts all parts to join
      * @return string the joined namespace.
      */
     public static function join(...$parts)
