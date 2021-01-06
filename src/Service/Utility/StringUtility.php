@@ -12,7 +12,7 @@ class StringUtility
     public static function toCamelCase(string $value, string ...$ignoredChars)
     {
         $ignoredChars = implode("", $ignoredChars);
-        $value = preg_replace("/[^\w$ignoredChars]+", ' ', $value);
+        $value = preg_replace("/[^\w$ignoredChars]+/", ' ', $value);
         $value = trim($value);
         $value = ucwords($value);
         $value = str_replace(" ", "", $value);
