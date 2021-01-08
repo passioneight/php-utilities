@@ -10,6 +10,44 @@ class UrlUtility
      * @param string $url
      * @return string
      */
+    public static function ensureTrailingSlash(string $url)
+    {
+        $url = self::removeLeadingSlash($url);
+        return $url . Php::URL_DELIMITER;
+    }
+
+    /**
+     * @param string $url
+     * @return string
+     */
+    public static function removeTrailingSlash(string $url)
+    {
+        return rtrim($url, Php::URL_DELIMITER);
+    }
+
+    /**
+     * @param string $url
+     * @return string
+     */
+    public static function ensureLeadingSlash(string $url)
+    {
+        $url = self::removeLeadingSlash($url);
+        return Php::URL_DELIMITER . $url;
+    }
+
+    /**
+     * @param string $url
+     * @return string
+     */
+    public static function removeLeadingSlash(string $url)
+    {
+        return ltrim($url, Php::URL_DELIMITER);
+    }
+
+    /**
+     * @param string $url
+     * @return string
+     */
     public static function getEndpointFromUrl(string $url)
     {
         $parts = self::getPartsFromUrl($url);
