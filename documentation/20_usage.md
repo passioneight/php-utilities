@@ -98,7 +98,7 @@ The `PathUtility` class also provides the following methods:
 - `addTrailingSlash`
 - `addLeadingSlash`
 
-###### PathUtility
+###### UrlUtility
 Again, the `UrlUtility` contains a `join` method. The only difference is the _glue_ that is used to join the passed parameters.
 Additionally, there are some more methods to help ease building URLs or extracting information (such as the endpoint of the URL).
 
