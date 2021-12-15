@@ -82,6 +82,7 @@ The `StringUtility` class also provides the following methods:
 - `contains`
 - `startsWith`
 - `endsWith`
+- `removeFromEnd`
 
 > These methods are **case-sensitive**.
 
