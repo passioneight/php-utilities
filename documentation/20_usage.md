@@ -98,6 +98,8 @@ $path = PathUtility::join(__DIR__, "Resources", "Importer"); // This is just an 
 The `PathUtility` class also provides the following methods:
 - `addTrailingSlash`
 - `addLeadingSlash`
+- `ensurePath`
+- `getPathFromFile`
 
 ###### UrlUtility
 Again, the `UrlUtility` contains a `join` method. The only difference is the _glue_ that is used to join the passed parameters.
