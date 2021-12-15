@@ -22,6 +22,32 @@ class StringUtility
     /**
      * @param string $needle
      * @param string $haystack
+     * @param bool $removeTrailingCharacters
+     * @return false|string
+     */
+    public static function removeFromEnd(string $needle, string $haystack, bool $removeTrailingCharacters = false)
+    {
+        if($removeTrailingCharacters) {
+            $lastOccurrencePosition = strrpos($haystack, $needle);
+
+            if($lastOccurrencePosition !== false) {
+                return substr($haystack, 0, $lastOccurrencePosition);
+            }
+        } else {
+            if(self::endsWith($needle, $haystack)) {
+                $needleLength = strlen($needle);
+                $haystackLength = strlen($haystack);
+
+                return substr($haystack, 0, $haystackLength - $needleLength);
+            }
+        }
+
+        return $haystack;
+    }
+
+    /**
+     * @param string $needle
+     * @param string $haystack
      * @return bool
      */
     public static function startsWith(string $needle, string $haystack)
