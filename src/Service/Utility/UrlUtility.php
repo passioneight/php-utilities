@@ -12,7 +12,7 @@ class UrlUtility
      */
     public static function ensureTrailingSlash(string $url)
     {
-        $url = self::removeLeadingSlash($url);
+        $url = self::removeTrailingSlash($url);
         return $url . Php::URL_DELIMITER;
     }
 
