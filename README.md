@@ -11,6 +11,7 @@ This repository provides various utility methods for PHP.
         - [StringUtility](/documentation/20_usage.md#stringutility)
         - [PathUtility](/documentation/20_usage.md#pathutility)
         - [UrlUtility](/documentation/20_usage.md#urlutility)
+- [Testing](/documentation/30_testing.md)
 
 # When should I use this bundle?
 Whenever you create a project using PHP.
