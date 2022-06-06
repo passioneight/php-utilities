@@ -61,6 +61,8 @@ $methodName = MethodUtility::createHasser($fieldName);
 > Additionally, you can check a given method for their type - e.g., `MethodUtility::isGetter($methodName);` or 
 > `MethodUtility::is($methodName, $methodType);`.
 
+> Note that `$fieldName` will only be passed to `ucfirst`. So, sanitizing the value of `$fieldName` will be up to you (e.g., `trim`ming the value). 
+
 #### NamespaceUtility
 Working with namespace can get quite cumbersome and prone to error. With the `NamespaceUtility`, you can create namespaces,
 split them into their corresponding parts and much more. For example:
@@ -68,23 +70,6 @@ split them into their corresponding parts and much more. For example:
 ```php
 $className = NamespaceUtility::getClassNameFromNamespace(App\Constant\TenantType::class); // Returns "TenantType"
 ```
-
-#### StringUtility
-More often than not, one needs to work with `string`s. Thus, the `StringUtility` class was introduced.
-This class comes in handy, for example, when converting a string to camel-case:
-
-```php
-$value = "myvalue";
-StringUtility::toCamelCase($value); // Returns "myValue"
-```
-
-The `StringUtility` class also provides the following methods:
-- `contains`
-- `startsWith`
-- `endsWith`
-- `removeFromEnd`
-
-> These methods are **case-sensitive**.
 
 #### PathUtility
 The `PathUtility` comes in handy, when working with files or paths. For example, when creating paths:
@@ -108,4 +93,4 @@ $url = UrlUtility::join($apiBaseUrl, $version, "endpoint"); // Send your request
 
 > Checkout the unit tests for more examples.
 
-### [Next Chapter: Testubg](/documentation/30_testing.md)
+### [Next Chapter: Testing](/documentation/30_testing.md)

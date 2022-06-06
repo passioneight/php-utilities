@@ -10,7 +10,7 @@ class UrlUtility
      * @param string $url
      * @return string
      */
-    public static function ensureTrailingSlash(string $url)
+    public static function ensureTrailingSlash(string $url): string
     {
         $url = self::removeTrailingSlash($url);
         return $url . Php::URL_DELIMITER;
@@ -20,7 +20,7 @@ class UrlUtility
      * @param string $url
      * @return string
      */
-    public static function removeTrailingSlash(string $url)
+    public static function removeTrailingSlash(string $url): string
     {
         return rtrim($url, Php::URL_DELIMITER);
     }
@@ -29,7 +29,7 @@ class UrlUtility
      * @param string $url
      * @return string
      */
-    public static function ensureLeadingSlash(string $url)
+    public static function ensureLeadingSlash(string $url): string
     {
         $url = self::removeLeadingSlash($url);
         return Php::URL_DELIMITER . $url;
@@ -39,7 +39,7 @@ class UrlUtility
      * @param string $url
      * @return string
      */
-    public static function removeLeadingSlash(string $url)
+    public static function removeLeadingSlash(string $url): string
     {
         return ltrim($url, Php::URL_DELIMITER);
     }
@@ -48,7 +48,7 @@ class UrlUtility
      * @param string $url
      * @return string
      */
-    public static function getEndpointFromUrl(string $url)
+    public static function getEndpointFromUrl(string $url): string
     {
         $parts = self::getPartsFromUrl($url);
         return end($parts) ?: "";
@@ -58,7 +58,7 @@ class UrlUtility
      * @param string $url
      * @return string[]
      */
-    public static function getPartsFromUrl(string $url)
+    public static function getPartsFromUrl(string $url): array
     {
         return explode(Php::URL_DELIMITER, self::getUrlWithoutQueryString($url));
     }
@@ -67,7 +67,7 @@ class UrlUtility
      * @param string $url
      * @return string
      */
-    public static function getUrlWithoutQueryString(string $url)
+    public static function getUrlWithoutQueryString(string $url): string
     {
         $parts = explode(Php::URL_DELIMITER_QUERY_STRING_START, $url);
         return reset($parts) ?: "";
@@ -77,7 +77,7 @@ class UrlUtility
      * @param string ...$parts all parts to join
      * @return string
      */
-    public static function join(...$parts)
+    public static function join(...$parts): string
     {
         return join(Php::URL_DELIMITER, $parts);
     }
@@ -88,7 +88,7 @@ class UrlUtility
      * @param string $delimiter
      * @return string
      */
-    public static function appendToUrl(string $url, string $value, string $delimiter = Php::URL_DELIMITER_QUERY_STRING_START)
+    public static function appendToUrl(string $url, string $value, string $delimiter = Php::URL_DELIMITER_QUERY_STRING_START): string
     {
         return "{$url}{$delimiter}{$value}";
     }

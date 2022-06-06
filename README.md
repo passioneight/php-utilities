@@ -8,7 +8,6 @@ This repository provides various utility methods for PHP.
     - [Utility Classes](/documentation/20_usage.md#utility-classes)
         - [MethodUtility](/documentation/20_usage.md#methodutility)
         - [NamespaceUtility](/documentation/20_usage.md#namespaceutility)
-        - [StringUtility](/documentation/20_usage.md#stringutility)
         - [PathUtility](/documentation/20_usage.md#pathutility)
         - [UrlUtility](/documentation/20_usage.md#urlutility)
 - [Testing](/documentation/30_testing.md)

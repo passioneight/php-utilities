@@ -10,7 +10,7 @@ abstract class Constant
     /**
      * @return array all constants in the current class
      */
-    public static function getAll()
+    public static function getAll(): array
     {
         try {
             $class = new ReflectionClass(get_called_class());
@@ -21,36 +21,34 @@ abstract class Constant
     }
 
     /**
-     * @param string $name the name to look for
-     *
+     * @param mixed $value the value to look for
+     * @return bool whether the constant with the given value is available
+     */
+    public static function containsValue(mixed $value): bool
+    {
+        $constants = self::getAll();
+        return in_array($value, $constants);
+    }
+
+    /**
+     * @param mixed $constantName the name to look for
      * @return bool whether the constant with the given name is available
      */
-    public static function has($name)
+    public static function containsConstant(mixed $constantName): bool
     {
         $constants = self::getAll();
-        return in_array($name, $constants);
+        return array_key_exists($constantName, $constants);
     }
 
     /**
-     * Use the self#has method to check whether the constant with the name exists.
-     *
-     * @param string $name the name to look for
-     *
-     * @return mixed the value of the constant or the value of $name
+     * @param string|null $name the name to look for
+     * @return mixed the value of the constant; may be null
      */
-    public static function get($name)
+    public static function getValueForConstant(?string $name): mixed
     {
         $constants = self::getAll();
-        return @$constants[strtoupper($name)] ?: $name;
-    }
+        $name = strtoupper($name);
 
-    /**
-     * @param string $input
-     * @param string $separator
-     * @return string the camel-cased string.
-     */
-    public static function toCamelCase(string $input, $separator = '-')
-    {
-        return str_replace($separator, '', ucwords($input, $separator));
+        return array_key_exists($name, $constants) ? $constants[$name] : null;
     }
 }

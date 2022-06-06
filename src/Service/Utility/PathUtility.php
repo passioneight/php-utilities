@@ -8,7 +8,7 @@ class PathUtility
      * @param string ...$parts
      * @return string
      */
-    public static function join(...$parts)
+    public static function join(...$parts): string
     {
         return join(DIRECTORY_SEPARATOR, $parts);
     }
@@ -17,7 +17,7 @@ class PathUtility
      * @param string $path
      * @return string
      */
-    public static function addTrailingSlash(string $path)
+    public static function addTrailingSlash(string $path): string
     {
         return $path . DIRECTORY_SEPARATOR;
     }
@@ -26,7 +26,7 @@ class PathUtility
      * @param string $path
      * @return string
      */
-    public static function addLeadingSlash(string $path)
+    public static function addLeadingSlash(string $path): string
     {
         return DIRECTORY_SEPARATOR . $path;
     }
@@ -37,7 +37,7 @@ class PathUtility
      * @param bool $recursive
      * @return bool
      */
-    public static function ensurePath(string $path, int $mode = 0777, bool $recursive = true)
+    public static function ensurePath(string $path, int $mode = 0777, bool $recursive = true): bool
     {
         if (!is_dir($path)) {
             return mkdir($path, $mode, $recursive);
@@ -48,10 +48,10 @@ class PathUtility
 
     /**
      * @param string $file
-     * @return false|string
+     * @return bool|string
      */
-    public static function getPathFromFile(string $file)
+    public static function getPathFromFile(string $file): bool|string
     {
-        return StringUtility::removeFromEnd(DIRECTORY_SEPARATOR, $file, true);
+        return pathinfo($file, PATHINFO_DIRNAME);
     }
 }

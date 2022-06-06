@@ -11,9 +11,9 @@ class MethodUtility
      * @param int $offset
      * @return bool
      */
-    public static function isGetter(string $name, int $offset = 0)
+    public static function isGetter(string $name, int $offset = 0): bool
     {
-        return self::is($name,MethodType::GET, $offset);
+        return self::is($name, MethodType::GET, $offset);
     }
 
     /**
@@ -21,9 +21,9 @@ class MethodUtility
      * @param int $offset
      * @return bool
      */
-    public static function isSetter(string $name, int $offset = 0)
+    public static function isSetter(string $name, int $offset = 0): bool
     {
-        return self::is($name,MethodType::SET, $offset);
+        return self::is($name, MethodType::SET, $offset);
     }
 
     /**
@@ -31,9 +31,9 @@ class MethodUtility
      * @param int $offset
      * @return bool
      */
-    public static function isIsser(string $name, int $offset = 0)
+    public static function isIsser(string $name, int $offset = 0): bool
     {
-        return self::is($name,MethodType::IS, $offset);
+        return self::is($name, MethodType::IS, $offset);
     }
 
     /**
@@ -41,9 +41,9 @@ class MethodUtility
      * @param int $offset
      * @return bool
      */
-    public static function isHasser(string $name, int $offset = 0)
+    public static function isHasser(string $name, int $offset = 0): bool
     {
-        return self::is($name,MethodType::HAS, $offset);
+        return self::is($name, MethodType::HAS, $offset);
     }
 
     /**
@@ -52,7 +52,7 @@ class MethodUtility
      * @param int $offset
      * @return bool
      */
-    public static function is(string $name, string $type, int $offset = 0)
+    public static function is(string $name, string $type, int $offset = 0): bool
     {
         return substr($name, $offset, strlen($type)) === $type;
     }
@@ -61,7 +61,7 @@ class MethodUtility
      * @param string $name
      * @return string
      */
-    public static function createGetter(string $name)
+    public static function createGetter(string $name): string
     {
         return self::create($name, MethodType::GET);
     }
@@ -70,7 +70,7 @@ class MethodUtility
      * @param string $name
      * @return string
      */
-    public static function createSetter(string $name)
+    public static function createSetter(string $name): string
     {
         return self::create($name, MethodType::SET);
     }
@@ -79,7 +79,7 @@ class MethodUtility
      * @param string $name
      * @return string
      */
-    public static function createIsser(string $name)
+    public static function createIsser(string $name): string
     {
         return self::create($name, MethodType::IS);
     }
@@ -88,7 +88,7 @@ class MethodUtility
      * @param string $name
      * @return string
      */
-    public static function createHasser(string $name)
+    public static function createHasser(string $name): string
     {
         return self::create($name, MethodType::HAS);
     }
@@ -98,8 +98,8 @@ class MethodUtility
      * @param string $methodType
      * @return string
      */
-    public static function create(string $name, string $methodType)
+    public static function create(string $name, string $methodType): string
     {
-        return $methodType . ucfirst(StringUtility::toCamelCase($name));
+        return $methodType . ucfirst($name);
     }
 }
