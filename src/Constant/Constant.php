@@ -21,26 +21,34 @@ abstract class Constant
     }
 
     /**
-     * @param mixed $name the name to look for
-     *
-     * @return bool whether the constant with the given name is available
+     * @param mixed $value the value to look for
+     * @return bool whether the constant with the given value is available
      */
-    public static function has(mixed $name): bool
+    public static function containsValue(mixed $value): bool
     {
         $constants = self::getAll();
-        return in_array($name, $constants);
+        return in_array($value, $constants);
     }
 
     /**
-     * Use the self#has method to check whether the constant with the name exists.
-     *
-     * @param string|null $name the name to look for
-     *
-     * @return mixed the value of the constant or the value of $name
+     * @param mixed $constantName the name to look for
+     * @return bool whether the constant with the given name is available
      */
-    public static function get(?string $name): mixed
+    public static function containsConstant(mixed $constantName): bool
     {
         $constants = self::getAll();
-        return @$constants[strtoupper($name)] ?: $name;
+        return array_key_exists($constantName, $constants);
+    }
+
+    /**
+     * @param string|null $name the name to look for
+     * @return mixed the value of the constant; may be null
+     */
+    public static function getValueForConstant(?string $name): mixed
+    {
+        $constants = self::getAll();
+        $name = strtoupper($name);
+
+        return array_key_exists($name, $constants) ? $constants[$name] : null;
     }
 }
