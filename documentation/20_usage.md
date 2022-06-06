@@ -39,8 +39,7 @@ if(!in_array($tenant->getType(), TenantType::getAll())) {
 > Note that it is considered best practice to **avoid plural** in constant class names, for the mere reason of increased
 > readability. That is, `TenantType::B2C` makes more sense than `TenantTypes::B2C`.
 
-> Also check out the [`Php`](src/Constant/Php.php) and [`MethodType`](src/Constant/MethodType.php) class.
-> They are mostly used internally, but may come in handy in your project.
+> Also check out the `Php` and `MethodType` classes. They are mostly used internally, but may come in handy in your project.
 
 ### Utility Classes
 In addition to the provided `Constant` class, the bundle also provides utility classes.
@@ -61,10 +60,10 @@ $methodName = MethodUtility::createHasser($fieldName);
 > Additionally, you can check a given method for their type - e.g., `MethodUtility::isGetter($methodName);` or 
 > `MethodUtility::is($methodName, $methodType);`.
 
-> Note that `$fieldName` will only be passed to `ucfirst`. So, sanitizing the value of `$fieldName` will be up to you (e.g., `trim`ming the value). 
+> Note that `$fieldName` will only be passed to `ucfirst`. So, sanitizing the value of `$fieldName` will be up to you (e.g., `trim` the value). 
 
 #### NamespaceUtility
-Working with namespace can get quite cumbersome and prone to error. With the `NamespaceUtility`, you can create namespaces,
+Working with namespaces can get quite cumbersome and prone to error. With the `NamespaceUtility`, you can create namespaces,
 split them into their corresponding parts and much more. For example:
 
 ```php
