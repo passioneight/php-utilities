@@ -52,6 +52,6 @@ class PathUtility
      */
     public static function getPathFromFile(string $file)
     {
-        return StringUtility::removeFromEnd(DIRECTORY_SEPARATOR, $file, true);
+        return pathinfo($file, PATHINFO_DIRNAME);
     }
 }

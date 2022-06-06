@@ -13,7 +13,7 @@ class MethodUtility
      */
     public static function isGetter(string $name, int $offset = 0)
     {
-        return self::is($name,MethodType::GET, $offset);
+        return self::is($name, MethodType::GET, $offset);
     }
 
     /**
@@ -23,7 +23,7 @@ class MethodUtility
      */
     public static function isSetter(string $name, int $offset = 0)
     {
-        return self::is($name,MethodType::SET, $offset);
+        return self::is($name, MethodType::SET, $offset);
     }
 
     /**
@@ -33,7 +33,7 @@ class MethodUtility
      */
     public static function isIsser(string $name, int $offset = 0)
     {
-        return self::is($name,MethodType::IS, $offset);
+        return self::is($name, MethodType::IS, $offset);
     }
 
     /**
@@ -43,7 +43,7 @@ class MethodUtility
      */
     public static function isHasser(string $name, int $offset = 0)
     {
-        return self::is($name,MethodType::HAS, $offset);
+        return self::is($name, MethodType::HAS, $offset);
     }
 
     /**
@@ -100,6 +100,6 @@ class MethodUtility
      */
     public static function create(string $name, string $methodType)
     {
-        return $methodType . ucfirst(StringUtility::toCamelCase($name));
+        return $methodType . ucfirst($name);
     }
 }
