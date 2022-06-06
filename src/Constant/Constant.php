@@ -43,14 +43,4 @@ abstract class Constant
         $constants = self::getAll();
         return @$constants[strtoupper($name)] ?: $name;
     }
-
-    /**
-     * @param string $input
-     * @param string $separator
-     * @return string the camel-cased string.
-     */
-    public static function toCamelCase(string $input, $separator = '-')
-    {
-        return str_replace($separator, '', ucwords($input, $separator));
-    }
 }
